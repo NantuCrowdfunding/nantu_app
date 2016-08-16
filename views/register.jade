@@ -10,23 +10,24 @@ block content
             .panel-heading
               h3.panel-title Registra tu perfil en NANTU!!
             .panel-body
-              form(role='form')
+              form(role='form' action="/users/createUser" method="post")
                 fieldset
                   .form-group
-                    input.form-control(placeholder='Nombre', name='name', type='label', autofocus='')
+                    input.form-control(placeholder='Nombre', name='Name', type='label', autofocus='', id="Name")
                   .form-group
-                    input.form-control(placeholder='Apellido', name='lastname', type='label', autofocus='')
+                    input.form-control(placeholder='Apellido', name='LastName', type='label', autofocus='', id="LastName")
                   .form-group
                     select.form-control
                       option Masculino
                       option Femenino
                       option X
                   .form-group
-                    input.form-control(placeholder='E-mail', name='email', type='email', autofocus='')
+                    input.form-control(placeholder='E-mail', name='Email', type='email', autofocus='', id="Email")
                   .form-group
-                    input.form-control(placeholder='Contraseña', name='password', type='password', value='')
+                    input.form-control(placeholder='Contraseña', name='Password', type='password', value='', id='Password')
                   // Change this to a button or input when using this as a form
-                  a.btn.btn-lg.btn-success.btn-block(href='index.html') Registrar
+                  button(class="btn btn-primary btn-lg btn-block") Registrame!!!
+                  
                   a.btn.btn-block.btn-social.btn-twitter
                     span.fa.fa-twitter
                     |  Login con Twitter

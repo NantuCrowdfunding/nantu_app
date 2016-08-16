@@ -1,0 +1,67 @@
+extend layoutAdmin
+
+block content
+  div(id="page-wrapper")
+    div(class="container-fluid")
+      div(class="row")
+        div(class="col-lg-12")
+          h1(class="page-header")= title
+          if(user)
+            li Bienvenido #{user.Name}
+            if(user.photo)
+              li
+                img(src="#{user.photo}")
+            .panel.panel-default
+              .panel-heading
+                | Perfil
+              // /.panel-heading
+              .panel-body
+                // Nav tabs
+                ul.nav.nav-tabs
+                  li.active
+                    a(href='#home', data-toggle='tab') Información
+                  li
+                    a(href='#profile', data-toggle='tab') Perfil
+                  li
+                    a(href='#messages', data-toggle='tab') Mesajes
+                // Tab panes
+                .tab-content
+                  #home.tab-pane.fade.in.active
+                    h4 Información
+                    p
+                      li Nombre : #{user.Name}
+                      li Apellidor : #{user.LastName}
+                      li Email : #{user.Email}
+                  #profile.tab-pane.fade
+                    h4 Perfil
+                    p
+                      | Puedes modificar tu perfil aqui.
+                    .panel-body
+                    .row
+                      .col-lg-12
+                        form(role='form' action="/users/update/#{user._id}" method="post")
+                          .form-group
+                            label Nombre
+                            input.form-control(name='Name' id='Name' value='#{user.Name}')
+                            p.help-block Modifica tu Nombre.
+                          .form-group
+                            label Apellido
+                            input.form-control(name='LastName' id='LastName' value='#{user.LastName}')
+                            p.help-block Modifica tu Apellido.
+                          .form-group
+                            label Email
+                            input.form-control(name='Email' id='Email' value='#{user.Email}')
+                            p.help-block Escribe tu E-Mail.
+                          .form-group
+                            label Elige tu Roll
+                            select.form-control(name='Roll' id='Roll')
+                              option(value='student') Estudiante
+                              option(value='admin') Administrador
+                              option(value='profesor') Profesor
+                              option(value='user') Usuario
+                          button.btn.btn-default(type='submit') Enviar
+                          button.btn.btn-default(type='reset') Reset formulario
+                  #messages.tab-pane.fade
+                    h4 Mensajes
+                    p
+                      | Este espacio es reservado para que nuestro grupo de VWL te envie informació.
