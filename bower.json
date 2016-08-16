@@ -1,0 +1,34 @@
+{
+  "name": "nantu_app",
+  "description": "this is a app for nantu",
+  "main": "app.js",
+  "authors": [
+    "mauricio duque orozco <mauricio.duque.eje@icloud.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "nantu"
+  ],
+  "homepage": "https://github.com/NantuCrowdfunding/nantu_app",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.7",
+    "datatables": "~1.10.4",
+    "datatables-plugins": "~1.0.1",
+    "flot": "~0.8.3",
+    "font-awesome": "~4.2.0",
+    "holderjs": "~2.4.1",
+    "metisMenu": "~1.1.3",
+    "morrisjs": "~0.5.1",
+    "datatables-responsive": "1.0.6",
+    "bootstrap-social": "~4.8.0",
+    "flot.tooltip": "~0.8.4"
+  }
+}

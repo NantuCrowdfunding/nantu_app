@@ -1,5 +1,356 @@
-extends layout
+doctype html
+html
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, maximum-scale=1')
+    title Homepage
+    link(rel='icon', href='favicon.png', type='image/png')
+    link(rel='shortcut icon', href='favicon.ico', type='img/x-icon')
+    link(href='http://fonts.googleapis.com/css?family=Montserrat:400,700', rel='stylesheet', type='text/css')
+    link(href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,800italic,700italic,600italic,400italic,300italic,800,700,600', rel='stylesheet', type='text/css')
+    link(href='css/bootstrap.css', rel='stylesheet', type='text/css')
+    link(href='css/style.css', rel='stylesheet', type='text/css')
+    link(href='css/font-awesome.css', rel='stylesheet', type='text/css')
+    link(href='css/responsive.css', rel='stylesheet', type='text/css')
+    link(href='css/animate.css', rel='stylesheet', type='text/css')
+    //if IE
+      style(type='text/css').
+        .pie {behavior:url(PIE.htc);}
+    script(type='text/javascript', src='js/jquery.1.8.3.min.js')
+    script(type='text/javascript', src='js/bootstrap.js')
+    script(type='text/javascript', src='js/jquery-scrolltofixed.js')
+    script(type='text/javascript', src='js/jquery.easing.1.3.js')
+    script(type='text/javascript', src='js/jquery.isotope.js')
+    script(type='text/javascript', src='js/wow.js')
+    script(type='text/javascript', src='js/classie.js')
+    //if lt IE 9
+      script(src='js/respond-1.1.0.min.js')
+      script(src='js/html5shiv.js')
+      script(src='js/html5element.js')
+  body
+    div(style='overflow:hidden;')
+      header#header.header
+        // header-start
+        .container
+          figure.logo.animated.fadeInDown.delay-07s
+            a(href='#')
+              img(src='img/logo.png', alt='')
+          h1.animated.fadeInDown.delay-07s Welcome To Knight Studios
+          ul.we-create.animated.fadeInUp.delay-1s
+            li We are a digital agency that loves crafting beautiful websites.
+          a.link.animated.fadeInUp.delay-1s(href='#') Get Started
+    // header-end
+    nav#test.main-nav-outer
+      // main-nav-start
+      .container
+        ul.main-nav
+          li
+            a(href='#header') Home
+          li
+            a(href='#service') Services
+          li
+            a(href='#Portfolio') Portfolio
+          li.small-logo
+            a(href='#header')
+              img(src='img/small-logo.png', alt='')
+          li
+            a(href='#client') Clients
+          li
+            a(href='#team') Team
+          li
+            a(href='#contact') Contact
+        a.res-nav_click(href='#')
+          i.fa-bars
+    // main-nav-end
+    section#service.main-section
+      // main-section-start
+      .container
+        h2 Services
+        h6 We offer exceptional service with complimentary hugs.
+        .row
+          .col-lg-4.col-sm-6.wow.fadeInLeft.delay-05s
+            .service-list
+              .service-list-col1
+                i.fa-paw
+              .service-list-col2
+                h3 branding & identity
+                p Proin iaculis purus digni consequat sem digni ssim. Donec entum digni ssim.
+            .service-list
+              .service-list-col1
+                i.fa-gear
+              .service-list-col2
+                h3 web development
+                p Proin iaculis purus consequat sem digni ssim. Digni ssim porttitora .
+            .service-list
+              .service-list-col1
+                i.fa-apple
+              .service-list-col2
+                h3 mobile design
+                p
+                  | Proin iaculis purus consequat digni sem digni ssim. Purus donec porttitora entum.
+            .service-list
+              .service-list-col1
+                i.fa-medkit
+              .service-list-col2
+                h3 24/7 Support
+                p Proin iaculis purus consequat sem digni ssim. Sem porttitora entum.
+          figure.col-lg-8.col-sm-6.text-right.wow.fadeInUp.delay-02s
+            img(src='img/macbook-pro.png', alt='')
+    // main-section-end
+    section.main-section.alabaster
+      // main-section alabaster-start
+      .container
+        .row
+          figure.col-lg-5.col-sm-4.wow.fadeInLeft
+            img(src='img/iphone.png', alt='')
+          .col-lg-7.col-sm-8.featured-work
+            h2 featured work
+            p.padding-b
+              | Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt. Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit.
+            .featured-box
+              .featured-box-col1.wow.fadeInRight.delay-02s
+                i.fa-magic
+              .featured-box-col2.wow.fadeInRight.delay-02s
+                h3 magic of theme development
+                p
+                  | Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+            .featured-box
+              .featured-box-col1.wow.fadeInRight.delay-04s
+                i.fa-gift
+              .featured-box-col2.wow.fadeInRight.delay-04s
+                h3 neatly packaged
+                p
+                  | Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+            .featured-box
+              .featured-box-col1.wow.fadeInRight.delay-06s
+                i.fa-dashboard
+              .featured-box-col2.wow.fadeInRight.delay-06s
+                h3 SEO optimized
+                p
+                  | Proin iaculis purus consequat sem cure digni ssim. Donec porttitora entum suscipit aenean rhoncus posuere odio in tincidunt.
+            a.Learn-More(href='#') Learn More
+    // main-section alabaster-end
+    section#Portfolio.main-section.paddind
+      // main-section-start
+      .container
+        h2 Portfolio
+        h6 Fresh portfolio of designs that will keep you wanting more.
+        .portfolioFilter
+          ul.Portfolio-nav.wow.fadeIn.delay-02s
+            li
+              a.current(href='#', data-filter='*') All
+            li
+              a(href='#', data-filter='.branding') Branding
+            li
+              a(href='#', data-filter='.webdesign') Web design
+            li
+              a(href='#', data-filter='.printdesign') Print design
+            li
+              a(href='#', data-filter='.photography') Photography
+      .portfolioContainer.wow.fadeInUp.delay-04s
+        .Portfolio-box.printdesign
+          a(href='#')
+            img(src='img/Portfolio-pic1.jpg', alt='')
+          h3 Foto Album
+          p Print Design
+        .Portfolio-box.webdesign
+          a(href='#')
+            img(src='img/Portfolio-pic2.jpg', alt='')
+          h3 Luca Theme
+          p Web Design
+        .Portfolio-box.branding
+          a(href='#')
+            img(src='img/Portfolio-pic3.jpg', alt='')
+          h3 Uni Sans
+          p Branding
+        .Portfolio-box.photography
+          a(href='#')
+            img(src='img/Portfolio-pic4.jpg', alt='')
+          h3 Vinyl Record
+          p Photography
+        .Portfolio-box.branding
+          a(href='#')
+            img(src='img/Portfolio-pic5.jpg', alt='')
+          h3 Hipster
+          p Branding
+        .Portfolio-box.photography
+          a(href='#')
+            img(src='img/Portfolio-pic6.jpg', alt='')
+          h3 Windmills
+          p Photography
+    // main-section-end
+    section#client.main-section.client-part
+      // main-section client-part-start
+      .container
+        b.quote-right.wow.fadeInDown.delay-03
+          i.fa-quote-right
+        .row
+          .col-lg-12
+            p.client-part-haead.wow.fadeInDown.delay-05
+              | It was a pleasure to work with the guys at Knight Studio. They made sure
+              | we were well fed and drunk all the time!
+        ul.client.wow.fadeIn.delay-05s
+          li
+            a(href='#')
+              img(src='img/client-pic1.jpg', alt='')
+              h3 James Bond
+              span License To Drink Inc.
+    // main-section client-part-end
+    .c-logo-part
+      // c-logo-part-start
+      .container
+        ul
+          li
+            a(href='#')
+              img(src='img/c-liogo1.png', alt='')
+          li
+            a(href='#')
+              img(src='img/c-liogo2.png', alt='')
+          li
+            a(href='#')
+              img(src='img/c-liogo3.png', alt='')
+          li
+            a(href='#')
+              img(src='img/c-liogo4.png', alt='')
+          li
+            a(href='#')
+              img(src='img/c-liogo5.png', alt='')
+    // c-logo-part-end
+    section#team.main-section.team
+      // main-section team-start
+      .container
+        h2 team
+        h6 Take a closer look into our amazing team. We won’t bite.
+        .team-leader-block.clearfix
+          .team-leader-box
+            .team-leader.wow.fadeInDown.delay-03s
+              .team-leader-shadow
+                a(href='#')
+              img(src='img/team-leader-pic1.jpg', alt='')
+              ul
+                li
+                  a.fa-twitter(href='#')
+                li
+                  a.fa-facebook(href='#')
+                li
+                  a.fa-pinterest(href='#')
+                li
+                  a.fa-google-plus(href='#')
+            h3.wow.fadeInDown.delay-03s Walter White
+            span.wow.fadeInDown.delay-03s Chief Executive Officer
+            p.wow.fadeInDown.delay-03s
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.
+          .team-leader-box
+            .team-leader.wow.fadeInDown.delay-06s
+              .team-leader-shadow
+                a(href='#')
+              img(src='img/team-leader-pic2.jpg', alt='')
+              ul
+                li
+                  a.fa-twitter(href='#')
+                li
+                  a.fa-facebook(href='#')
+                li
+                  a.fa-pinterest(href='#')
+                li
+                  a.fa-google-plus(href='#')
+            h3.wow.fadeInDown.delay-06s Jesse Pinkman
+            span.wow.fadeInDown.delay-06s Product Manager
+            p.wow.fadeInDown.delay-06s
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.
+          .team-leader-box
+            .team-leader.wow.fadeInDown.delay-09s
+              .team-leader-shadow
+                a(href='#')
+              img(src='img/team-leader-pic3.jpg', alt='')
+              ul
+                li
+                  a.fa-twitter(href='#')
+                li
+                  a.fa-facebook(href='#')
+                li
+                  a.fa-pinterest(href='#')
+                li
+                  a.fa-google-plus(href='#')
+            h3.wow.fadeInDown.delay-09s Skyler white
+            span.wow.fadeInDown.delay-09s Accountant
+            p.wow.fadeInDown.delay-09s
+              | Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin consequat sollicitudin cursus. Dolor sit amet, consectetur adipiscing elit proin consequat.
+    // main-section team-end
+    section.business-talking
+      // business-talking-start
+      .container
+        h2 Let’s Talk Business.
+    // business-talking-end
+    .container
+      section#contact.main-section.contact
+        .row
+          .col-lg-6.col-sm-7.wow.fadeInLeft
+            .contact-info-box.address.clearfix
+              h3
+                i.icon-map-marker
+                | Address:
+              span
+                | 308 Negra Arroyo Lane
+                br
+                | Albuquerque, New Mexico, 87111.
+            .contact-info-box.phone.clearfix
+              h3
+                i.fa-phone
+                | Phone:
+              span 1-800-BOO-YAHH
+            .contact-info-box.email.clearfix
+              h3
+                i.fa-pencil
+                | email:
+              span hello@knightstudios.com
+            .contact-info-box.hours.clearfix
+              h3
+                i.fa-clock-o
+                | Hours:
+              span
+                strong Monday - Thursday:
+                |  10am - 6pm
+                br
+                strong Friday:
+                |  People work on Fridays now?
+                br
+                strong Saturday - Sunday:
+                |  Best not to ask.
+            ul.social-link
+              li.twitter
+                a(href='#')
+                  i.fa-twitter
+              li.facebook
+                a(href='#')
+                  i.fa-facebook
+              li.pinterest
+                a(href='#')
+                  i.fa-pinterest
+              li.gplus
+                a(href='#')
+                  i.fa-google-plus
+              li.dribbble
+                a(href='#')
+                  i.fa-dribbble
+          .col-lg-6.col-sm-5.wow.fadeInUp.delay-05s
+            .form
+              input.input-text(type='text', name='', value='Your Name *', onfocus="if(this.value==this.defaultValue)this.value='';", onblur="if(this.value=='')this.value=this.defaultValue;")
+              input.input-text(type='text', name='', value='Your E-mail *', onfocus="if(this.value==this.defaultValue)this.value='';", onblur="if(this.value=='')this.value=this.defaultValue;")
+              textarea.input-text.text-area(cols='0', rows='0', onfocus="if(this.value==this.defaultValue)this.value='';", onblur="if(this.value=='')this.value=this.defaultValue;") Your Message *
+              input.input-btn(type='submit', value='send message')
+    footer.footer
+      .container
+        .footer-logo
+          a(href='#')
+            img(src='img/footer-logo.png', alt='')
+        span.copyright
+          | Copyright © 2015 
+          a(href='http://bootstraptaste.com/') Bootstrap Themes
+          |  by BootstrapTaste
+      //
+        All links in the footer should remain intact.
+        Licenseing information is available at: http://bootstraptaste.com/license/
+        You can buy this theme without footer links online at: http://bootstraptaste.com/buy/?theme=Knight
 
-block content
-  h1= title
-  p Welcome to #{title}
+    script(type='text/javascript' scr='/js/index.js')
