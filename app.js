@@ -4,14 +4,17 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var methodOverride = require('method-override')
+var loggerw = require('./lib/logger');
+
+
+var routes = require('./routes/index');
+var users = require('./routes/users');
 
 var passport = require('passport')
 var mongoose = require('mongoose')
 
-//require('./middleware/passport')(passport);
-
-var routes = require('./routes/index');
-var users = require('./routes/users');
+require('./middleware/passport')(passport);
 
 mongoose.connect('mongodb://localhost/nantuUsuarios',function(err, res){
     if (err) {
@@ -33,11 +36,35 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(methodOverride());
+app.use(require('express-session')({ secret: 'keyboard cat', resave: true, saveUninitialized: true }));
+
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'bower_components')));
+//app.use('/bower_components',  express.static(__dirname + '/bower_components'));
+
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
+
+app.get('/logout', function(req, res) {
+  req.session.auth = false
+  req.session.destroy()
+  req.logout();
+  res.redirect('/login');
+});
+
+app.get('/auth/facebook', passport.authenticate('facebook'));
+
+app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { failureRedirect: '/login' }),
+  function(req, res) {
+    // Successful authentication, redirect home.
+    req.session.auth = true
+    res.redirect('/profile');
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
